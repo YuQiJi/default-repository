@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>js学习</title>
+<script>
+	document.write("<i><h1>标题</h1><br><p style=color:red>段落</p></i>");
+	function fun0(){
+		alert("提示函数alert()");
+	}	
+
+	function fun1(){
+		a=document.getElementById("testid");
+		if(a.innerHTML.match("可以改变网页内容"))
+		{
+			a.innerHTML="<img  src=test.png width=25%>";
+		}
+		else
+		{
+			a.innerHTML="可以改变网页内容";
+		}
+	}
+	document.write("<i><h1>标题</h1><br><p style=color:red>段落</p></i>");
+	function fun2(){
+		document.write("<p style=text-align:center>使用自定义函数调用document.write()函数会覆盖文档吗?</p>");
+	}
+	function fun3(){
+		x=document.getElementById("table");
+		var i;
+		var str="<tr>";
+		var k=10;
+		for(i=0;i<100;i++){
+			str=str+"<td>"+i+"</td>";
+		}
+		x.innerHTML=str+"</tr>";
+	}
+</script>
+</head>
+<body>
+<script>
+	<!--alert("现在是"+Date());-->
+	console.log("向控制台写入数据");
+</script>
+<button type=button onclick=alert("欢迎")>点击!</button>
+<button type=button onclick=fun1()>点击改变网页</button>
+<button type=button onclick=fun0()>点击弹出提示页面</button>
+<button type=button onclick=fun2()>点击查看是否会覆盖文档</button>
+<button type=button onclick=fun3()>点击自动生成表格</button>
+<p id=testid1 style=color:red>原文档网页如此</p>
+<p id=testid><img  src=test.png width=25%></p>
+<table id=table border=1></table>
+</body>
+</html>
